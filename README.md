@@ -9,4 +9,5 @@ Unfortunately, the data collection process was halted because we ran out of our 
 
 This project leverages on Github Actions for scheduling and scraping purposes. 
 
-# This is a work in progress.
+# Previous findings
+![](https://github.com/ayushsubedi/datainnews/blob/main/findings_media.png?raw=true)
