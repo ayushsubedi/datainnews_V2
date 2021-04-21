@@ -1,4 +1,6 @@
 # DATA IN NEWS
+![](https://github.com/ayushsubedi/datainnews_V2/blob/main/showcase.png?raw=true)
+
 How journalists use data in their reporting or in their writing can be viewed as a reflection of the country’s demand for statistics and data. Back in 2020, I developed an indicator model (for The World Bank) to assess the use of data by Nepali news portals based on the methodology proposed by Klein, Galdin, and Mohamedou 2016. 
 
 The results from the project was used in the research article published at http://documents1.worldbank.org/curated/en/805261601023506163/pdf/Use-of-Data-in-the-Private-Sector-of-Nepal-The-Current-State-and-Opportunities-in-Finance-Education-and-the-Media.pdf
@@ -10,6 +12,3 @@ Unfortunately, the data collection process was halted because we ran out of our 
 # Github actions
 
 This project leverages on Github Actions for scheduling and scraping purposes. 
-
-# Previous findings
-![](https://github.com/ayushsubedi/datainnews/blob/main/findings_media.png?raw=true)
