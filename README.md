@@ -10,6 +10,7 @@ As of 9th February 2020, the results showed that very few news articles indicate
 Unfortunately, the data collection process was halted because we ran out of our AWS Activate for Startups credits. 
 
 ## TODOS
+- [ ] create a data architecture diagram
 - [ ] curate a list of twitter handles of Nepali newspapers that put URL to their newspapers
 - [ ] use twint to create datasets
 - [ ] use Newspaper to collect important information (author, etc) and complete the dataset
