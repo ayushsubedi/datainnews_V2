@@ -17,6 +17,7 @@ Unfortunately, the data collection process was halted because we ran out of our 
 - [ ] optimize regular expression functions (if possible this should be performed during scraping)
 - [ ] create a sqlite database to hold access information (and design schema around other meta)
 - [ ] add checkpoints (using twint resume or build it manually)
+- [ ] create a financial pitch
 
 # Github actions
 
