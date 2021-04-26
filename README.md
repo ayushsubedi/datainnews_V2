@@ -14,7 +14,7 @@ Unfortunately, the data collection process was halted because we ran out of our 
 
 ## TODOS
 - [x] create a simple architecture diagram
-- [ ] curate a list of twitter handles of Nepali newspapers that put URL to their newspapers
+- [x] curate a list of twitter handles of Nepali newspapers that put URL to their newspapers
 - [ ] use twint to create datasets
 - [ ] use Newspaper to collect important information (author, etc) and complete the dataset
 - [ ] research dash, swifter and pandarallel
@@ -22,6 +22,14 @@ Unfortunately, the data collection process was halted because we ran out of our 
 - [ ] create a sqlite database to hold access information (and design schema around other meta)
 - [ ] add checkpoints (using twint resume or build it manually)
 - [ ] create a financial pitch
+
+## Twitter handles
+- @kathmandupost
+- @thehimalayan
+- @NepaliTimes
+- @OnlineKhabar_En
+- @RepublicaNepal
+
 
 # The Frugal way
 
