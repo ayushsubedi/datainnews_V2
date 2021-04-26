@@ -9,6 +9,31 @@ As of 9th February 2020, the results showed that very few news articles indicate
 
 Unfortunately, the data collection process was halted because we ran out of our AWS Activate for Startups credits. 
 
-# Github actions
 
-This project leverages on Github Actions for scheduling and scraping purposes. 
+![](https://github.com/ayushsubedi/datainnews_V2/blob/main/dataflow.png?raw=true)
+
+## TODOS
+- [x] create a simple architecture diagram
+- [x] curate a list of twitter handles of Nepali newspapers that put URL to their newspapers
+- [ ] use twint to create datasets
+- [ ] use Newspaper to collect important information (author, etc) and complete the dataset
+- [ ] research dash, swifter and pandarallel
+- [ ] optimize regular expression functions (if possible this should be performed during scraping)
+- [ ] create a sqlite database to hold access information (and design schema around other meta)
+- [ ] add checkpoints (using twint resume or build it manually)
+- [ ] create a financial pitch
+
+## Twitter handles
+- @kathmandupost
+- @thehimalayan
+- @NepaliTimes
+- @OnlineKhabar_En
+- @RepublicaNepal
+
+
+# The Frugal way
+
+- This project leverages on Github Actions for scheduling and scraping purposes.
+- This project is hosted on Heroku free tier
+- The free domain name is provided by Freenom
+- Uses amazing open source projects, primariliy (Twint, Newspaper) etc 
