@@ -18,11 +18,14 @@ Unfortunately, the data collection process was halted because we ran out of our 
 - [x] use twint to create datasets (historic)
 - [ ] check if url is present, url does not 404, and url belongs to the publisher
 - [ ] use Newspaper to collect important information (author, etc) and complete the dataset
-- [ ] research dash, swifter and pandarallel
+- [x] research dash, swifter and pandarallel
 - [ ] optimize regular expression functions (if possible this should be performed during scraping)
 - [ ] create a sqlite database to hold access information (and design schema around other meta)
 - [ ] add checkpoints (using twint resume or build it manually)
 - [ ] create a financial pitch
+
+## POC
+- [] create a full working version of the product (including Github Actions, using only one newspaper)
 
 ## Twitter handles
 - @kathmandupost
