@@ -16,8 +16,8 @@ Unfortunately, the data collection process was halted because we ran out of our 
 - [x] create a simple architecture diagram
 - [x] curate a list of twitter handles of Nepali newspapers that put URL to their newspapers
 - [x] use twint to create datasets (historic)
-- [ ] check if url is present, url does not 404, and url belongs to the publisher
-- [ ] use Newspaper to collect important information (author, etc) and complete the dataset
+- [x] check if url is present, url does not 404, and url belongs to the publisher
+- [x] use Newspaper to collect important information (author, etc) and complete the dataset
 - [x] research dash, swifter and pandarallel
 - [ ] optimize regular expression functions (if possible this should be performed during scraping)
 - [ ] create a sqlite database to hold access information (and design schema around other meta)
