@@ -26,7 +26,7 @@ Unfortunately, the data collection process was halted because we ran out of our 
 
 ## POC
 - [ ] create a full working version of the product (including Github Actions, using only one newspaper)
-- [ ] research downloading twint as pandas to merge with previous data
+- [x] research downloading twint as pandas to merge with previous data
 
 ## Twitter handles
 - @kathmandupost
