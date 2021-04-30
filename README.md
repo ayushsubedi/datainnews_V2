@@ -41,4 +41,5 @@ Unfortunately, the data collection process was halted because we ran out of our 
 - This project leverages on Github Actions for scheduling and scraping purposes.
 - This project is hosted on Heroku free tier
 - The free domain name is provided by Freenom
+- Relies on cloudflare free https or certbot (free)
 - Uses amazing open source projects, primariliy (Twint, Newspaper) etc 
