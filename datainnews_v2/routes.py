@@ -7,9 +7,10 @@ import pandas as pd
 @application.route('/')
 def index():
     df = pd.read_csv(
-        "datainnews_v2/static/csvs/NepaliTimes_analysis.csv",
+        "datainnews_v2/static/csvs/NepaliTimes.csv",
         parse_dates=['created_at'],
-        usecols=['id', 'created_at', 'urls'])
+        usecols=['created_at', 'urls'])
+    df.sort_values(['created_at'], inplace=True)
     content = {
         "table": df.tail().to_html(classes="table"),
         "size": df.shape[0],
