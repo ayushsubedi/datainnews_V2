@@ -1,4 +1,4 @@
-from datainnews_v2.helper import data_level1, data_level2, \
+from datainnews_v2.variables import data_level1, data_level2, \
     data_level3, data_level_indicator, filter_list
 import re
 from bs4 import BeautifulSoup
@@ -8,6 +8,7 @@ from newspaper import Article
 from urllib.parse import urlparse
 import pandas as pd
 import twint
+
 
 
 stop_words = set(stopwords.words('english'))
