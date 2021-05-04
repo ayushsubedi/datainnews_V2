@@ -9,8 +9,6 @@ from urllib.parse import urlparse
 import pandas as pd
 import twint
 
-
-
 stop_words = set(stopwords.words('english'))
 
 
