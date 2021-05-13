@@ -20,3 +20,7 @@ def demo():
     }
     return render_template("demo.html", **content)
 
+
+@application.route('/')
+def index():
+    return render_template("index.html") 
