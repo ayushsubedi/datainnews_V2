@@ -6,7 +6,7 @@ import pandas as pd
 import datetime
 
 
-@application.route('/')
+@application.route('/demo')
 def demo():
     df = pd.read_csv(
         "datainnews_v2/static/csvs/NepaliTimes.csv",
