@@ -6,8 +6,8 @@ import pandas as pd
 import datetime
 
 
-@application.route('/')
-def index():
+@application.route('/demo')
+def demo():
     df = pd.read_csv(
         "datainnews_v2/static/csvs/NepaliTimes.csv",
         parse_dates=['created_at'],
@@ -18,5 +18,9 @@ def index():
         "size": df.shape[0],
         "last_updated": df.created_at.max()
     }
-    return render_template("index.html", **content)
+    return render_template("demo.html", **content)
 
+
+@application.route('/')
+def index():
+    return render_template("index.html") 
