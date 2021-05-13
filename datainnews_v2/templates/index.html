@@ -1,0 +1,748 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DATA IN NEWS</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename = 'img/logomin.png') }}"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:site_name" content="Data in news" />
+    <meta property="og:title" content="Data in news" />
+    <meta property="og:url" content="https://datainnews.ml/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://datainnews.ml/static/img/social.jpg"
+    />
+    <meta
+      property="og:description"
+      content="Statistical literacy index based on national newspaper archives"
+    />
+    <meta
+      property="og:image"
+      content="{{ url_for('static', filename = 'img/chart.PNG') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'css/bulma.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename = 'css/tabs.css') }}"
+    />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/7dc3015a44.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar is-primary">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+          <p class="title is-5 has-text-white is-spaced">
+            DATA IN NEWS
+            <sup class="title is-6 has-text-danger">(BETA)</sup>
+          </p>
+        </a>
+      </div>
+    </nav>
+    <section class="hero is-primary">
+      <div class="tabs is-boxed is-centered main-menu" id="nav">
+        <ul>
+          <li data-target="pane-1" id="1" class="is-active">
+            <a>
+              <span class="icon is-small"><i class="fa fa-info"></i></span>
+              <span>About</span>
+            </a>
+          </li>
+          <li data-target="pane-2" id="2">
+            <a>
+              <span class="icon is-small"
+                ><i class="far fa-chart-bar"></i
+              ></span>
+              <span>Level 1 Results</span>
+            </a>
+          </li>
+          <li data-target="pane-3" id="3">
+            <a>
+              <span class="icon is-small"
+                ><i class="fab far fa-chart-bar"></i
+              ></span>
+              <span>Level 2 Results</span>
+            </a>
+          </li>
+          <li data-target="pane-4" id="4">
+            <a>
+              <span class="icon is-small"
+                ><i class="far fa-chart-bar"></i
+              ></span>
+              <span>Level 3 Results</span>
+            </a>
+          </li>
+          <li data-target="pane-5" id="5">
+            <a>
+              <span class="icon is-small"
+                ><i class="fas fa-arrow-down"></i
+              ></span>
+              <span>Limitations</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <div class="container">
+      <div class="tab-content">
+        <div class="tab-pane is-active" id="pane-1">
+          <div class="content">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+            <h1 class="has-text-primary">DATA IN NEWS</h1>
+            <p>
+              How journalists use data in their reporting or in their writing
+              can be viewed as a reflection of the country’s demand for
+              statistics and data. The World Bank team developed an indicator
+              model to assess the use of data by Nepali news portals based on
+              the methodology proposed by Klein, Galdin, and Mohamedou 2016. As
+              of 9th February 2020, the results show that very few news articles
+              indicate the source of data or mention development indicators.
+              However, articles that discuss data, reports, research,
+              statistics, and related topics do critically engage with these
+              ideas.
+
+              <br /><br />
+              More than <strong>{{total_articles}} articles </strong> were
+              analyzed to assess the use of data in media (the data collection
+              is ongoing and the analysis is updated regularly on this portal).
+              The data source for the model was Nepali news portals that support
+              RSS feeds and are published in English. The news portals that meet
+              these criteria are the Himalayan Times, Onlinekhabar, the Nepali
+              Times, the Telegraph Nepal, the Kathmandu Tribune, Lokaantar,
+              Ratopati, Nepali Sansar.
+            </p>
+            <h3 class="has-text-primary">Level 1 Analysis</h3>
+            <p>
+              The team analyzed whether articles indicated the presence of a
+              data source, a statistical/development indicator, or keywords from
+              papers on statistical capacity–building projects. As of 11th
+              November 2020, the share of news articles that included at least
+              one keyword that indicated “consistent non-critical” use of data
+              averaged 7.6 percent (scores ranged from 2 percent to 12 percent).
+            </p>
+            <p>
+              The
+              <a
+                href="https://iase-web.org/documents/papers/rt2016/Klein.pdf"
+                target="_blank"
+                >paper</a
+              >
+              by Klein, Galdin, and Mohamedou describes "Consistent
+              Non-critical" (Level 1) as "Appropriate but non-critical
+              engagement with context, multiple aspects of terminology usage"
+            </p>
+            <h6 class="has-text-primary">Level 1 Keywords</h6>
+
+            <script src="https://gist.github.com/datafornepal/051801fa9c02ddf32aa01a28174862b5.js"></script>
+            <h3 class="has-text-primary">Level 2 Analysis</h3>
+            <p>
+              This level of analysis assessed whether an article critically
+              engaged with topics of data or statistics or made arguments by
+              using mathematical concepts. As of 9th February 2020, seventeen
+              percent of the articles directly referenced data, records,
+              research, statistics, or studies. Two-thirds of those articles
+              included keywords.
+            </p>
+            <p>
+              The
+              <a
+                href="https://iase-web.org/documents/papers/rt2016/Klein.pdf"
+                target="_blank"
+                >paper</a
+              >
+              by Klein, Galdin, and Mohamedou describes "Critical" (Level 2) as
+              "Critical, questioning engagement in contexts that do not involve
+              proportional reasoning, but which do involve appropriate use of
+              terminology."
+            </p>
+            <h6 class="has-text-primary">Level 2 Keywords</h6>
+            <script src="https://gist.github.com/datafornepal/4f0b35c597c377630e68dfbd820e7cff.js"></script>
+            <h3 class="has-text-primary">Level 3 Analysis</h3>
+            <p>
+              “Critical mathematical” use of data occurs when an article
+              indicates questioning or interpreting of data and statistics. As
+              of 9th February 2020, no article met this criterion.
+            </p>
+            <p>
+              The
+              <a
+                href="https://iase-web.org/documents/papers/rt2016/Klein.pdf"
+                target="_blank"
+                >paper </a
+              >by Klein, Galdin, and Mohamedou describes "Critical Mathematical"
+              (Level 3) as "Critical, questioning engagement with context, using
+              proportional reasoning particularly in chance contexts, showing
+              appreciation of the need for uncertainty in making predictions,
+              and interpreting subtle aspects of language."
+            </p>
+            <h6 class="has-text-primary">Level 3 Keywords</h6>
+            <script src="https://gist.github.com/datafornepal/582c3c77566f92d4c03fb755a76edea6.js"></script>
+          </div>
+          </div>
+          </div>
+        </div>
+        </div>
+        <div class="tab-pane" id="pane-2">
+          <div class="content">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+            <h1 class="has-text-primary">LEVEL 1 RESULTS</h1>
+            <div class="columns">
+              <div class="column">
+                <div id="div1"></div>
+              </div>
+              <div class="column">
+                <div id="div2"></div>
+              </div>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  {% for c in column_names_level1 %}
+                  <th>
+                    {{c}}
+                  </th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in row_data_level1 %}
+                <tr>
+                  {% for r in row %}
+                  <td>{{ r }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+        <div class="tab-pane" id="pane-3">
+          <div class="content">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+            <h1 class="has-text-primary">LEVEL 2 RESULTS</h1>
+
+            <div class="columns">
+              <div class="column"><div id="div3"></div></div>
+              <div class="column"><div id="div4"></div></div>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  {% for c in column_names_level2 %}
+                  <th>
+                    {{c}}
+                  </th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in row_data_level2 %}
+                <tr>
+                  {% for r in row %}
+                  <td>{{ r }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+        <div class="tab-pane" id="pane-4">
+          <div class="content">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+            <h1 class="has-text-primary">LEVEL 3 RESULTS</h1>
+            <div class="columns">
+              <div class="column">
+                <div id="div5"></div>
+              </div>
+              <div class="column">
+                <div id="div6"></div>
+              </div>
+            </div>
+            <table class="table">
+              <thead>
+                <tr>
+                  {% for c in column_names_level3 %}
+                  <th>
+                    {{c}}
+                  </th>
+                  {% endfor %}
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in row_data_level3 %}
+                <tr>
+                  {% for r in row %}
+                  <td>{{ r }}</td>
+                  {% endfor %}
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </div>
+</div>
+</div>
+        <div class="tab-pane" id="pane-5">
+          <div class="content">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+            <h1 class="has-text-primary">LIMITATIONS AND NEXT STEPS</h1>
+            <p>
+              Several limitations of the model in the context of data collection
+              and analysis methodology have been identified.<br /><br />
+              First of all, very few Nepali news portals support news categories
+              or webpage based RSS. We found only 7 in English when we searched
+              for RSS between 9th December 2019 - 11th November 2020.
+              Besides, the portals that support RSS do not update their feeds on
+              a regular basis. <br /><br />Additionally, the only language
+              medium supported currently is English. The model fails to capture
+              segments of several news portals and a significant population size
+              who consume news in Nepali. The model also makes the assumption
+              that sequence matching and keywords association implies
+              statistical literacy. This leads to a high rate of false-positives
+              and false-negatives. <br /><br />However, there are
+              several plans being envisioned to mitigate these limitations.
+              First and foremost, the data collection process is always ongoing.
+              The backend of this dashboard collects data automatically on a
+              daily basis. This implies, over a period of time, the sample size
+              will be large enough for more accurate results.
+              <br /><br />Similarly, we are hoping for more national newspapers to add RSS support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</div>
+    </div>
+
+    <br /><br />
+    <footer class="footer">
+      <div class="columns">
+        <div class="column is-three-fifths">
+          <p class="is-6 has-text-white">
+            <a href="https://twitter.com/ravinepal" target="_blank"
+              >Ravi Kumar</a
+            >
+            provided overall guidance to develop this indicator
+            <a
+              target="_blank"
+              href="https://iase-web.org/documents/papers/rt2016/Klein.pdf"
+              >model</a
+            >
+            which is based on the methodology proposed by Klein, Galdin, and
+            Mohamedou 2016. The model is developed by
+            <a href="https://github.com/ayushsubedi/" target="_blank"
+              >Ayush Subedi</a
+            >
+            with the support from
+            <a
+              href="https://www.worldbank.org/en/data/statistical-capacity-building/trust-fund-for-statistical-capacity-building"
+              target="_blank"
+            >
+              Trust Fund for 'Statistical Capacity Building'</a
+            >, a global grant facility, administered by the Development Data
+            Group of the World Bank.
+          </p>
+          <br />
+          <p class="is-6 has-text-white">
+            This portal was initiated to assess the use of data in media in
+            Nepal to provide an input to an Exploratory Assessment of the use of
+            data, a publication (work in progress) under the Partnership for
+            Knowledge-Based Poverty Reduction and Shared Prosperity, a World
+            Bank project with support from the UK Department of International
+            Development to increase the production and usage of data and
+            statistics in Nepal.
+          </p>
+        </div>
+        <div class="column"></div>
+        <div class="column">
+          <ul>
+            <li>
+              <a href="/">
+                <i class="fas fa-home fa-fw mr-3 has-text-white"></i
+                ><span class="has-text-white">&nbsp;&nbsp;Home</span>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://iase-web.org/documents/papers/rt2016/Klein.pdf"
+              >
+                <i class="fas fa-paperclip fa-fw mr-3 has-text-white"></i
+                ><span class="has-text-white">&nbsp;&nbsp;Research Paper</span>
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href="https://github.com/datafornepal/newspaper_analysis"
+              >
+                <i class="fab fa-github-alt fa-fw mr-3 has-text-white"></i
+                ><span class="has-text-white">&nbsp;&nbsp;Github</span>
+              </a>
+            </li>
+          </ul>
+          <br />
+          <br />
+          <span class="icon">
+            <i class="fab fa-creative-commons has-text-grey-light fa-2x"></i>
+          </span>
+          <span>&nbsp;</span>
+          <span class="icon">
+            <i class="fab fa-creative-commons-by has-text-grey-light fa-2x"></i>
+          </span>
+          <a
+            href="https://creativecommons.org/licenses/by/4.0/"
+            target="_blank"
+          >
+            <p class="is-6 has-text-grey-light">
+              Licensed under a Creative Commons <br />Attribution-ShareAlike 4.0
+              International License.
+            </p>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename = 'js/tabs.js') }}"></script>
+    <script>
+      Highcharts.chart("div1", {
+        chart: {
+          type: "column",
+        },
+        legend:{
+          align: 'left',
+          verticalAlign: 'top',
+        },
+        title: {
+          text: "",
+        },
+
+        xAxis: {
+          categories: {{newspapers|safe}},
+          crosshair: true,
+        },
+        credits: {
+          enabled: false
+        },
+        exporting: {
+          buttons: {
+          contextButton: {
+            menuItems: ['downloadPNG', 'downloadSVG']
+          }
+          }
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: "Number of Articles",
+          },
+        },
+        tooltip: {
+          headerFormat:
+            '<span style="font-size:10px">{point.key}</span><table>',
+          pointFormat:
+            '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y}</b></td></tr>',
+          footerFormat: "</table>",
+          shared: true,
+          useHTML: true,
+        },
+        plotOptions: {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0,
+          },
+        },
+        series: {{chart1|safe}}
+      });
+    </script>
+
+    <script>
+      Highcharts.chart('div2', {
+        chart: {
+          type: 'column'
+        },
+
+        title: {
+          text: ''
+        },
+        plotOptions: {
+          column:{
+            borderWidth:0,
+            groupPadding:0,
+            shadow:false
+          },
+        },
+        tooltip: {
+              pointFormat: '<b>Percentage: {point.y:.1f}%</b>'
+            },
+        xAxis: {
+          categories: {{newspapers|safe}},
+          crosshair:true
+        },
+        yAxis: {
+          min: 0,
+          max:100,
+          title: {
+            text: 'Percentage',
+          },
+
+        },
+        credits: {
+          enabled: false
+        },
+                exporting: {
+          buttons: {
+          contextButton: {
+            menuItems: ['downloadPNG', 'downloadSVG']
+          }
+          }
+        },
+        series:[{
+          name:'',
+          data: {{ chart2| safe}},
+          showInLegend: false
+        }]
+      });
+    </script>
+
+    <script>
+      Highcharts.chart("div3", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "",
+        },
+
+        legend:{
+          align: 'left',
+          verticalAlign: 'top',
+        },
+
+        xAxis: {
+          categories: {{newspapers|safe}},
+          crosshair: true,
+        },
+        credits: {
+          enabled: false
+        },
+        exporting: {
+          buttons: {
+          contextButton: {
+            menuItems: ['downloadPNG', 'downloadSVG']
+          }
+          }
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: "Number of Articles",
+          },
+        },
+        tooltip: {
+          headerFormat:
+            '<span style="font-size:10px">{point.key}</span><table>',
+          pointFormat:
+            '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y}</b></td></tr>',
+          footerFormat: "</table>",
+          shared: true,
+          useHTML: true,
+        },
+        plotOptions: {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0,
+          },
+        },
+        series: {{chart3|safe}}
+      });
+    </script>
+
+    <script>
+      Highcharts.chart('div4', {
+        chart: {
+          type: 'column'
+        },
+        title: {
+          text: ''
+        },
+        plotOptions: {
+          column:{
+            borderWidth:0,
+            groupPadding:0,
+            shadow:false
+          },
+        },
+        tooltip: {
+              pointFormat: '<b>Percentage: {point.y:.1f}%</b>'
+            },
+        xAxis: {
+          categories: {{newspapers|safe}},
+          crosshair:true
+        },
+        yAxis: {
+          min: 0,
+          max:100,
+          title: {
+            text: 'Percentage',
+          },
+
+        },
+        credits: {
+          enabled: false
+        },
+                exporting: {
+          buttons: {
+          contextButton: {
+            menuItems: ['downloadPNG', 'downloadSVG']
+          }
+          }
+        },
+        series:[{
+          name:'',
+          data: {{ chart4| safe}},
+          showInLegend: false
+        }]
+      });
+    </script>
+
+    <script>
+      Highcharts.chart("div5", {
+        chart: {
+          type: "column",
+        },
+        title: {
+          text: "",
+        },
+
+        legend:{
+          align: 'left',
+          verticalAlign: 'top',
+        },
+
+        xAxis: {
+          categories: {{newspapers|safe}},
+          crosshair: true,
+        },
+        credits: {
+          enabled: false
+        },
+        exporting: {
+          buttons: {
+          contextButton: {
+            menuItems: ['downloadPNG', 'downloadSVG']
+          }
+          }
+        },
+        yAxis: {
+          min: 0,
+          title: {
+            text: "Number of Articles",
+          },
+        },
+        tooltip: {
+          headerFormat:
+            '<span style="font-size:10px">{point.key}</span><table>',
+          pointFormat:
+            '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y}</b></td></tr>',
+          footerFormat: "</table>",
+          shared: true,
+          useHTML: true,
+        },
+        plotOptions: {
+          column: {
+            pointPadding: 0.2,
+            borderWidth: 0,
+          },
+        },
+        series: {{chart5|safe}}
+      });
+    </script>
+
+    <script>
+      Highcharts.chart('div6', {
+        chart: {
+          type: 'column'
+        },
+        title: {
+          text: ''
+        },
+        plotOptions: {
+          column:{
+            borderWidth:0,
+            groupPadding:0,
+            shadow:false
+          },
+        },
+        exporting: {
+          buttons: {
+          contextButton: {
+            menuItems: ['downloadPNG', 'downloadSVG']
+          }
+          }
+        },
+        tooltip: {
+              pointFormat: '<b>Percentage: {point.y:.1f}%</b>'
+            },
+        xAxis: {
+          categories: {{newspapers|safe}},
+          crosshair:true
+        },
+        yAxis: {
+          min: 0,
+          max:100,
+          title: {
+            text: 'Percentage',
+          },
+
+        },
+        credits: {
+          enabled: false
+        },
+        series:[{
+          name:'',
+          data: {{ chart6| safe}},
+          showInLegend: false
+        }]
+      });
+    </script>
+  </body>
+</html>
