@@ -20,22 +20,3 @@ def index():
     }
     return render_template("index.html", **content)
 
-
-# @application.route('/<newspaper>')
-# def nepalitimes(newspaper):
-#     df = pd.read_csv(
-#         "datainnews_v2/static/csvs/NepaliTimes.csv",
-#         parse_dates=['created_at'],
-#         usecols=['created_at', 'urls'])
-#     since = df.created_at.max().strftime("%Y-%m-%d %H:%M:%S")
-#     until = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-#     df_ = get_new_articles(
-#         newspaper_username='NepaliTimes',
-#         since=since,
-#         until=until)
-#     content = {
-#         "table": df_.to_html(classes="table"),
-#         "size": df_.shape[0],
-#         "last_updated": df_.created_at.max()
-#     }
-#     return render_template("index.html", **content)
