@@ -6,21 +6,6 @@ import pandas as pd
 import datetime
 
 
-@application.route('/demo')
-def demo():
-    df = pd.read_csv(
-        "datainnews_v2/static/csvs/NepaliTimes.csv",
-        parse_dates=['created_at'],
-        usecols=['created_at', 'urls'])
-    df.sort_values(['created_at'], inplace=True)
-    content = {
-        "table": df.tail().to_html(classes="table"),
-        "size": df.shape[0],
-        "last_updated": df.created_at.max()
-    }
-    return render_template("demo.html", **content)
-
-
 @application.route('/')
 def index():
     df_nepalitimes = pd.read_csv(
@@ -33,7 +18,7 @@ def index():
     df_kathmandupost = pd.read_csv(
         "datainnews_v2/static/csvs/KathmanduPost_flask.csv",
         parse_dates=['created_at'])
-    df_kathmandupost['Newspaper'] = "Kathmandu Post"
+    df_kathmandupost['Newspaper'] = "The Kathmandu Post"
 
 
     df = df_nepalitimes.append([df_kathmandupost])
