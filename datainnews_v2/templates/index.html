@@ -133,6 +133,8 @@
                               Times, the Telegraph Nepal, the Kathmandu Tribune, Lokaantar,
                               Ratopati, Nepali Sansar.
                            </p>
+                           <h3 class="has-text-primary">Data Collection Timeline</h3>
+                           {{div |safe}}
                            <h3 class="has-text-primary">Level 1 Analysis</h3>
                            <p>
                               The team analyzed whether articles indicated the presence of a
@@ -153,6 +155,7 @@
                               Non-critical" (Level 1) as "Appropriate but non-critical
                               engagement with context, multiple aspects of terminology usage"
                            </p>
+ 
                            <h6 class="has-text-primary">Level 1 Keywords</h6>
                            <script src="https://gist.github.com/datafornepal/051801fa9c02ddf32aa01a28174862b5.js"></script>
                            <h3 class="has-text-primary">Level 2 Analysis</h3>
@@ -808,5 +811,34 @@
            }]
          });
       </script>
+
+<script>
+   Highcharts.chart('div0', {
+               chart: {
+                   zoomType: 'x'
+               },
+               title: {
+                   text: 'CREDIT ADDED VS CREDIT DEDUCTED TREND'
+               },
+               xAxis: {
+                   type: 'datetime'
+               },
+               yAxis: {
+                   title: {
+                       text: 'Credit'
+                   }
+               },
+               legend: {
+                   enabled: true
+               },
+               series: [{
+                   type: 'line',
+                   name: 'Credit Added',
+                   data: {{ chart0 }}
+               },]
+           });
+    
+   </script>
+   
    </body>
 </html>
