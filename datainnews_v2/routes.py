@@ -40,25 +40,25 @@ def index():
     df = df.groupby('Newspaper').sum().join(df.groupby('Newspaper').size().to_frame('News Articles'))
   
     df.rename({
-        'level1_count': 'Level1',
-        'level2_count': 'Level2',
-        'level3_count': 'Level3',
+        'level1_count': 'Level 1',
+        'level2_count': 'Level 2',
+        'level3_count': 'Level 3',
         'level_2_3_valid': 'Filtered Articles',
         }, inplace=True, axis=1)
     df.reset_index(inplace=True)
   
-    df['Level1 %'] = (100 * df['Level1'] / df['News Articles'
+    df['Level 1 %'] = (100 * df['Level 1'] / df['News Articles'
                       ]).map('{:,.1f} %'.format)
-    df['Level2 %'] = (100 * df['Level2'] / df['Filtered Articles'
+    df['Level 2 %'] = (100 * df['Level 2'] / df['Filtered Articles'
                       ]).map('{:,.1f} %'.format)
-    df['Level3 %'] = (100 * df['Level3'] / df['Filtered Articles'
+    df['Level 3 %'] = (100 * df['Level 3'] / df['Filtered Articles'
                       ]).map('{:,.1f} %'.format)
-    chart1 = [{'name': 'Level 1', 'data': df['Level1'].tolist()},
+    chart1 = [{'name': 'Level 1', 'data': df['Level 1'].tolist()},
               {'name': 'Total Articles', 'data': df['News Articles'
               ].tolist()}]
-    chart2 = (df['Level1'] / df['News Articles'] * 100).tolist()
+    chart2 = (df['Level 1'] / df['News Articles'] * 100).tolist()
 
-    level1 = df[['Newspaper', 'News Articles', 'Level1', 'Level1 %']]
+    level1 = df[['Newspaper', 'News Articles', 'Level 1', 'Level 1 %']]
     column_names_level1 = level1.columns.values
     row_data_level1 = list(level1.values.tolist())
 
