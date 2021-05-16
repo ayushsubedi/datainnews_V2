@@ -24,11 +24,13 @@ def demo():
 @application.route('/')
 def index():
     df_nepalitimes = pd.read_csv(
-        "datainnews_v2/static/csvs/NepaliTimes.csv",
-        parse_dates=['created_at'],
-        usecols=['created_at', 'urls'])
+        "datainnews_v2/static/csvs/NepaliTimes_flask.csv",
+        parse_dates=['created_at'])
+    df_kathmandupost = pd.read_csv(
+        "datainnews_v2/static/csvs/KathmanduPost_flask.csv",
+        parse_dates=['created_at'])
     
     content = {
-        'total_articles': df_nepalitimes.shape[0]
+        'total_articles': df_nepalitimes.shape[0] + df_kathmandupost.shape[0]
     }
     return render_template("index.html", **content) 
