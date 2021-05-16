@@ -1,11 +1,8 @@
 
 from datainnews_v2 import application
-from datainnews_v2.helper import get_data_collection_timeline_chart
 from flask import render_template
 import pandas as pd
 import datetime
-
-
 
 @application.route('/')
 def index():
@@ -18,10 +15,14 @@ def index():
         "datainnews_v2/static/csvs/KathmanduPost_flask.csv",
         parse_dates=['created_at'])
     df_kathmandupost['Newspaper'] = "The Kathmandu Post"
+    
+    
     df_ = df_nepalitimes.append([df_kathmandupost])
     df = df_.groupby('Newspaper').sum().join(df_.groupby('Newspaper').size().to_frame('News Articles'))
+    df_month = df_.set_index('created_at').resample('M')['urls'].count().reset_index()
+    df_percentage = df_.set_index('created_at').resample('M').sum()
+    df_percentage = df_percentage.join(df_month.set_index('created_at'))
 
-    
     df.rename({
         'level1_count': 'Level 1',
         'level2_count': 'Level 2',
@@ -54,24 +55,27 @@ def index():
 
     level1 = df[['Newspaper', 'News Articles', 'Level 1', 'Level 1 %']]
     column_names_level1 = level1.columns.values
-    row_data_level1 = list(level1.values.tolist())
+    row_data_level1 = level1.values.tolist()
     
     level2 = df[['Newspaper', 'News Articles', 'Filtered Articles',
                 'Level 2', 'Level 2 %']]
     column_names_level2 = level2.columns.values
-    row_data_level2 = list(level2.values.tolist())
+    row_data_level2 = level2.values.tolist()
 
     level3 = df[['Newspaper', 'News Articles', 'Filtered Articles',
                 'Level 3', 'Level 3 %']]
     column_names_level3 = level3.columns.values
-    row_data_level3 = list(level3.values.tolist())
+    row_data_level3 = level3.values.tolist()
 
     newspapers = df['Newspaper'].tolist()
-    
     content = {
         'total_articles': df['News Articles'].sum(),
         'newspapers':newspapers,
-        'div':get_data_collection_timeline_chart(df_),
+        'chart0_x': df_month['created_at'].dt.strftime('%b, %y').tolist(),
+        'chart0_y': df_month['urls'].tolist(),
+        'chart1_y': (100*df_percentage['level1_count']/df_percentage['urls']).tolist(),
+        'chart2_y': (100*df_percentage['level2_count']/df_percentage['level_2_3_valid']).tolist(),
+        'chart3_y': (100*df_percentage['level3_count']/df_percentage['level_2_3_valid']).tolist(),
         'chart1':chart1,
         'chart2':chart2,
         'chart3':chart3,

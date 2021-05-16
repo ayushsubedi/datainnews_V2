@@ -43,7 +43,6 @@
       <script src="https://code.highcharts.com/modules/accessibility.js"></script>
       <script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
       <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
       <script
          src="https://kit.fontawesome.com/7dc3015a44.js"
          crossorigin="anonymous"
@@ -134,7 +133,7 @@
                               Ratopati, Nepali Sansar.
                            </p>
                            <h3 class="has-text-primary">Data Collection Timeline</h3>
-                           {{div |safe}}
+                           <div id="div0"></div>
                            <h3 class="has-text-primary">Level 1 Analysis</h3>
                            <p>
                               The team analyzed whether articles indicated the presence of a
@@ -155,7 +154,6 @@
                               Non-critical" (Level 1) as "Appropriate but non-critical
                               engagement with context, multiple aspects of terminology usage"
                            </p>
- 
                            <h6 class="has-text-primary">Level 1 Keywords</h6>
                            <script src="https://gist.github.com/datafornepal/051801fa9c02ddf32aa01a28174862b5.js"></script>
                            <h3 class="has-text-primary">Level 2 Analysis</h3>
@@ -212,7 +210,13 @@
                      <div class="card-content">
                         <div class="content">
                            <h2 class="has-text-primary">Level 1 Results</h2>
-
+                           <div>
+                              <div class="divider is-primary">Level 1 Progress</div>
+                           </div>
+                           <div id="div7"></div>
+                           <div>
+                              <div class="divider is-primary">Newspaper Breakdown</div>
+                           </div>
                            <div class="columns">
                               <div class="column">
                                  <div id="div1"></div>
@@ -221,34 +225,35 @@
                                  <div id="div2"></div>
                               </div>
                            </div>
-
                            <div>
                               <div class="divider is-primary">Table</div>
-                            </div>
-                            <div class="card">
+                           </div>
+                           <div class="card">
                               <div class="card-content">
                                  <div class="content">
-                           <table class="table">
-                              <thead>
-                                 <tr>
-                                    {% for c in column_names_level1 %}
-                                    <th>
-                                       {{c}}
-                                    </th>
-                                    {% endfor %}
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 {% for row in row_data_level1 %}
-                                 <tr>
-                                    {% for r in row %}
-                                    <td>{{ r }}</td>
-                                    {% endfor %}
-                                 </tr>
-                                 {% endfor %}
-                              </tbody>
-                           </table>
-                           </div></div></div>
+                                    <table class="table">
+                                       <thead>
+                                          <tr>
+                                             {% for c in column_names_level1 %}
+                                             <th>
+                                                {{c}}
+                                             </th>
+                                             {% endfor %}
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                          {% for row in row_data_level1 %}
+                                          <tr>
+                                             {% for r in row %}
+                                             <td>{{ r }}</td>
+                                             {% endfor %}
+                                          </tr>
+                                          {% endfor %}
+                                       </tbody>
+                                    </table>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -260,6 +265,13 @@
                      <div class="card-content">
                         <div class="content">
                            <h2 class="has-text-primary">Level 2 Results</h2>
+                           <div>
+                              <div class="divider is-primary">Level 8 Progress</div>
+                           </div>
+                           <div id="div8"></div>
+                           <div>
+                              <div class="divider is-primary">Newspaper Breakdown</div>
+                           </div>
                            <div class="columns">
                               <div class="column">
                                  <div id="div3"></div>
@@ -270,31 +282,33 @@
                            </div>
                            <div>
                               <div class="divider is-primary">Table</div>
-                            </div>
-                            <div class="card">
+                           </div>
+                           <div class="card">
                               <div class="card-content">
                                  <div class="content">
-                           <table class="table">
-                              <thead>
-                                 <tr>
-                                    {% for c in column_names_level2 %}
-                                    <th>
-                                       {{c}}
-                                    </th>
-                                    {% endfor %}
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 {% for row in row_data_level2 %}
-                                 <tr>
-                                    {% for r in row %}
-                                    <td>{{ r }}</td>
-                                    {% endfor %}
-                                 </tr>
-                                 {% endfor %}
-                              </tbody>
-                           </table>
-                           </div></div></div>
+                                    <table class="table">
+                                       <thead>
+                                          <tr>
+                                             {% for c in column_names_level2 %}
+                                             <th>
+                                                {{c}}
+                                             </th>
+                                             {% endfor %}
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                          {% for row in row_data_level2 %}
+                                          <tr>
+                                             {% for r in row %}
+                                             <td>{{ r }}</td>
+                                             {% endfor %}
+                                          </tr>
+                                          {% endfor %}
+                                       </tbody>
+                                    </table>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -306,6 +320,13 @@
                      <div class="card-content">
                         <div class="content">
                            <h2 class="has-text-primary">Level 3 Results</h2>
+                           <div>
+                              <div class="divider is-primary">Level 3 Progress</div>
+                           </div>
+                           <div id="div9"></div>
+                           <div>
+                              <div class="divider is-primary">Newspaper Breakdown</div>
+                           </div>
                            <div class="columns">
                               <div class="column">
                                  <div id="div5"></div>
@@ -316,31 +337,33 @@
                            </div>
                            <div>
                               <div class="divider is-primary">Table</div>
-                            </div>
-                            <div class="card">
+                           </div>
+                           <div class="card">
                               <div class="card-content">
                                  <div class="content">
-                           <table class="table">
-                              <thead>
-                                 <tr>
-                                    {% for c in column_names_level3 %}
-                                    <th>
-                                       {{c}}
-                                    </th>
-                                    {% endfor %}
-                                 </tr>
-                              </thead>
-                              <tbody>
-                                 {% for row in row_data_level3 %}
-                                 <tr>
-                                    {% for r in row %}
-                                    <td>{{ r }}</td>
-                                    {% endfor %}
-                                 </tr>
-                                 {% endfor %}
-                              </tbody>
-                           </table>
-                           </div></div></div>
+                                    <table class="table">
+                                       <thead>
+                                          <tr>
+                                             {% for c in column_names_level3 %}
+                                             <th>
+                                                {{c}}
+                                             </th>
+                                             {% endfor %}
+                                          </tr>
+                                       </thead>
+                                       <tbody>
+                                          {% for row in row_data_level3 %}
+                                          <tr>
+                                             {% for r in row %}
+                                             <td>{{ r }}</td>
+                                             {% endfor %}
+                                          </tr>
+                                          {% endfor %}
+                                       </tbody>
+                                    </table>
+                                 </div>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -811,34 +834,225 @@
            }]
          });
       </script>
-
-<script>
-   Highcharts.chart('div0', {
-               chart: {
-                   zoomType: 'x'
+      <script>
+         Highcharts.chart('div0', {
+           chart: {
+             backgroundColor: 'transparent',
+             spacingBottom: 50,
+             spacingTop: 50,
+             spacingLeft: 50,
+             spacingRight: 50,
+             borderWidth: 2,
+             borderColor: "#4a4a4a11",
+           },
+           title: {
+             text: ''
+           },
+           plotOptions: {
+             column:{
+               borderWidth:0,
+               groupPadding:0,
+               shadow:false
+             },
+           },
+           exporting: {
+             buttons: {
+             contextButton: {
+               menuItems: ['downloadPNG', 'downloadSVG']
+             }
+             }
+           },
+           yAxis: {
+             title: {
+               text: 'Number of articles',
+             },
+         
+           },
+           credits: {
+             enabled: false
+           },
+           xAxis: {
+         categories: {{chart0_x | safe}},
+         labels: {
+         rotation: 90
+         }
+         },
+         
+         series: [{
+         data: {{chart0_y}}    
+         }]
+         });
+      </script>
+      <script>
+         Highcharts.chart('div7', {
+           chart: {
+             backgroundColor: 'transparent',
+             spacingBottom: 50,
+             spacingTop: 50,
+             spacingLeft: 50,
+             spacingRight: 50,
+             borderWidth: 2,
+             borderColor: "#4a4a4a11",
+           },
+           legend: {
+         enabled: false
+         },
+           title: {
+             text: ''
+           },
+           plotOptions: {
+             column:{
+               borderWidth:0,
+               groupPadding:0,
+               shadow:false
+             },
+           },
+           exporting: {
+             buttons: {
+             contextButton: {
+               menuItems: ['downloadPNG', 'downloadSVG']
+             }
+             }
+           },
+           tooltip: {
+                 pointFormat: '<b>Percentage: {point.y:.1f}%</b>'
                },
-               title: {
-                   text: 'CREDIT ADDED VS CREDIT DEDUCTED TREND'
+           yAxis: {
+             min: 0,
+             max:100,
+             title: {
+               text: 'Number of articles',
+             },
+         
+           },
+           credits: {
+             enabled: false
+           },
+           xAxis: {
+         categories: {{chart0_x | safe}},
+         labels: {
+         rotation: 90
+         }
+         },
+         
+         series: [{
+         data: {{chart1_y}}    
+         }]
+         });
+      </script>
+      <script>
+         Highcharts.chart('div8', {
+           chart: {
+             backgroundColor: 'transparent',
+             spacingBottom: 50,
+             spacingTop: 50,
+             spacingLeft: 50,
+             spacingRight: 50,
+             borderWidth: 2,
+             borderColor: "#4a4a4a11",
+           },
+           legend: {
+         enabled: false
+         },
+           title: {
+             text: ''
+           },
+           plotOptions: {
+             column:{
+               borderWidth:0,
+               groupPadding:0,
+               shadow:false
+             },
+           },
+           exporting: {
+             buttons: {
+             contextButton: {
+               menuItems: ['downloadPNG', 'downloadSVG']
+             }
+             }
+           },
+           tooltip: {
+                 pointFormat: '<b>Percentage: {point.y:.1f}%</b>'
                },
-               xAxis: {
-                   type: 'datetime'
+           yAxis: {
+             min: 0,
+             max:100,
+             title: {
+               text: 'Number of articles',
+             },
+         
+           },
+           credits: {
+             enabled: false
+           },
+           xAxis: {
+         categories: {{chart0_x | safe}},
+         labels: {
+         rotation: 90
+         }
+         },
+         
+         series: [{
+         data: {{chart2_y}}    
+         }]
+         });
+      </script>
+      <script>
+         Highcharts.chart('div9', {
+           chart: {
+             backgroundColor: 'transparent',
+             spacingBottom: 50,
+             spacingTop: 50,
+             spacingLeft: 50,
+             spacingRight: 50,
+             borderWidth: 2,
+             borderColor: "#4a4a4a11",
+           },
+           legend: {
+         enabled: false
+         },
+           title: {
+             text: ''
+           },
+           plotOptions: {
+             column:{
+               borderWidth:0,
+               groupPadding:0,
+               shadow:false
+             },
+           },
+           exporting: {
+             buttons: {
+             contextButton: {
+               menuItems: ['downloadPNG', 'downloadSVG']
+             }
+             }
+           },
+           tooltip: {
+                 pointFormat: '<b>Percentage: {point.y:.1f}%</b>'
                },
-               yAxis: {
-                   title: {
-                       text: 'Credit'
-                   }
-               },
-               legend: {
-                   enabled: true
-               },
-               series: [{
-                   type: 'line',
-                   name: 'Credit Added',
-                   data: {{ chart0 }}
-               },]
-           });
-    
-   </script>
-   
+           yAxis: {
+             min: 0,
+             max:100,
+             title: {
+               text: 'Number of articles',
+             },
+         
+           },
+           credits: {
+             enabled: false
+           },
+           xAxis: {
+         categories: {{chart0_x | safe}},
+         labels: {
+         rotation: 90
+         }
+         },
+         
+         series: [{
+         data: {{chart3_y}}    
+         }]
+         });
+      </script>
    </body>
 </html>
