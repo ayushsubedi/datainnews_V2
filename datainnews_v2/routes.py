@@ -29,7 +29,7 @@ def index():
         'level_2_3_valid': 'Filtered Articles',
         }, inplace=True, axis=1)
     df.reset_index(inplace=True)
-  
+
     df['Level 1 %'] = (100 * df['Level 1'] / df['News Articles'
                       ]).map('{:,.1f} %'.format)
     df['Level 2 %'] = (100 * df['Level 2'] / df['Filtered Articles'
