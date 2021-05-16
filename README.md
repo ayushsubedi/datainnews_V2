@@ -1,5 +1,5 @@
 # Data in NEWS
-![website](http://datainnews.herokuapp.com/)
+[Data in NEWS portal](http://datainnews.herokuapp.com/)
 ![](https://github.com/ayushsubedi/datainnews_V2/blob/main/datainnews_v2/static/img/showcase.png?raw=true)
 
 How journalists use data in their reporting or in their writing can be viewed as a reflection of the country’s demand for statistics and data. Back in 2020, I developed an indicator model (for The World Bank) to assess the use of data by Nepali news portals based on the methodology proposed by Klein, Galdin, and Mohamedou 2016. 
