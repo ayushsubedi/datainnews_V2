@@ -70,6 +70,7 @@ def index():
     newspapers = df['Newspaper'].tolist()
     content = {
         'total_articles': df['News Articles'].sum(),
+        'max_date': df_.created_at.max().strftime('%d %b %Y'),
         'newspapers':newspapers,
         'chart0_x': df_month['created_at'].dt.strftime('%b, %y').tolist(),
         'chart0_y': df_month['urls'].tolist(),
