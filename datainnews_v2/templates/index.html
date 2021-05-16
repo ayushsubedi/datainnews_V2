@@ -103,12 +103,14 @@
             </ul>
          </div>
       </section>
+
       <div class="container">
          <div class="tab-content">
             <div class="tab-pane is-active" id="pane-1">
                <div class="content">
                   <div class="card">
                      <div class="card-content">
+
                         <div class="content">
                            <h2 class="has-text-primary">Data in NEWS</h2>
                            <p>
@@ -126,11 +128,13 @@
                               More than <strong>{{total_articles}} articles </strong> were
                               analyzed to assess the use of data in media (the data collection
                               is ongoing and the analysis is updated regularly on this portal).
-                              The data source for the model was Nepali news portals that support
-                              RSS feeds and are published in English. The news portals that meet
-                              these criteria are the Himalayan Times, Onlinekhabar, the Nepali
-                              Times, the Telegraph Nepal, the Kathmandu Tribune, Lokaantar,
-                              Ratopati, Nepali Sansar.
+                              Initially, the data source for the model was Nepali news portals that support
+                              RSS feeds. 
+                              Due to most of the Nepali news portals deprecating the RSS feature, 
+                              the current source of news articles are news URLs posted by the official news portal's account on twitter. 
+                              The news portals that use twitter to post articles regularly are
+                              are <strong>The Himalayan Times, Onlinekhabar, The Nepali
+                              Times, Republica Nepal, and The Kathmandu Post.</strong>
                            </p>
                            <h3 class="has-text-primary">Data Collection Timeline</h3>
                            <div id="div0"></div>
@@ -138,8 +142,7 @@
                            <p>
                               The team analyzed whether articles indicated the presence of a
                               data source, a statistical/development indicator, or keywords from
-                              papers on statistical capacity–building projects. As of 11th
-                              November 2020, the share of news articles that included at least
+                              papers on statistical capacity–building projects. As of <strong>{{max_date}}</strong>, the share of news articles that included at least
                               one keyword that indicated “consistent non-critical” use of data
                               averaged 7.6 percent (scores ranged from 2 percent to 12 percent).
                            </p>
@@ -160,7 +163,7 @@
                            <p>
                               This level of analysis assessed whether an article critically
                               engaged with topics of data or statistics or made arguments by
-                              using mathematical concepts. As of 9th February 2020, seventeen
+                              using mathematical concepts. As of <strong>{{max_date}}</strong>, seventeen
                               percent of the articles directly referenced data, records,
                               research, statistics, or studies. Two-thirds of those articles
                               included keywords.
@@ -183,7 +186,7 @@
                            <p>
                               “Critical mathematical” use of data occurs when an article
                               indicates questioning or interpreting of data and statistics. As
-                              of 9th February 2020, no article met this criterion.
+                              of <strong>{{max_date}}</strong>, no article met this criterion.
                            </p>
                            <p>
                               The
@@ -199,7 +202,31 @@
                            </p>
                            <h6 class="has-text-primary">Level 3 Keywords</h6>
                            <script src="https://gist.github.com/datafornepal/582c3c77566f92d4c03fb755a76edea6.js"></script>
-                        </div>
+                           <br><br>
+                           <div>
+                              <div class="divider is-primary">Report</div>
+                           </div>
+                           <div class="columns">
+                              <div class="column is-one-quarter">
+                                 <figure class="image">
+                                    <img src="{{ url_for('static', filename = 'img/paper.png') }}">
+                                  </figure>
+                              </div>
+                              <div class="column">
+                                 The contents of this portal partly facilitates the reseach of "Use of Data in the Private Sector of Nepal : The Current State and Opportunities in Finance, Education, and the Media" 
+                                 <br>
+                                 <br>
+                                 <strong>Citation</strong>
+                                 Kumar,Ravi; Leslie,Joshua Shumshere; Maharjan,Liza; Subedi,Ayush.2020.<br><br>
+
+                                 <i>Use of Data in the Private Sector of Nepal : The Current State and Opportunities in Finance, Education, and the Media (English)</i>. Washington, D.C. : World Bank Group. http://documents.worldbank.org/curated/en/805261601023506163/Use-of-Data-in-the-Private-Sector-of-Nepal-The-Current-State-and-Opportunities-in-Finance-Education-and-the-Media
+                                 <br><br>
+                                 <a href="https://documents.worldbank.org/en/publication/documents-reports/documentdetail/805261601023506163/use-of-data-in-the-private-sector-of-nepal-the-current-state-and-opportunities-in-finance-education-and-the-media" target="_blank"><button class="button is-success is-rounded">Link to Paper</button></a>
+                              </div>
+                           </div>
+
+                        
+                           </div>
                      </div>
                   </div>
                </div>
@@ -374,27 +401,22 @@
                   <div class="card">
                      <div class="card-content">
                         <div class="content">
-                           <h1 class="has-text-primary">Limitations and Next Steps</h1>
+                           <h1 class="has-text-primary">Limitations</h1>
                            <p>
                               Several limitations of the model in the context of data collection
                               and analysis methodology have been identified.<br /><br />
                               First of all, very few Nepali news portals support news categories
                               or webpage based RSS. We found only 7 in English when we searched
                               for RSS between 9th December 2019 - 11th November 2020.
+                              
                               Besides, the portals that support RSS do not update their feeds on
-                              a regular basis. <br /><br />Additionally, the only language
+                              a regular basis. Therefore, we had to change our implementation from RSS (described by original authors), to getting data from Twitter.<br /><br />Additionally, the only language
                               medium supported currently is English. The model fails to capture
                               segments of several news portals and a significant population size
                               who consume news in Nepali. The model also makes the assumption
                               that sequence matching and keywords association implies
                               statistical literacy. This leads to a high rate of false-positives
-                              and false-negatives. <br /><br />However, there are
-                              several plans being envisioned to mitigate these limitations.
-                              First and foremost, the data collection process is always ongoing.
-                              The backend of this dashboard collects data automatically on a
-                              daily basis. This implies, over a period of time, the sample size
-                              will be large enough for more accurate results.
-                              <br /><br />Similarly, we are hoping for more national newspapers to add RSS support.
+                              and false-negatives. <br /><br />
                            </p>
                         </div>
                      </div>
