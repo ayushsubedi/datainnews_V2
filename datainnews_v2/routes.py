@@ -4,7 +4,8 @@ from datainnews_v2.helper import get_new_articles
 from flask import render_template
 import pandas as pd
 import datetime
-
+import plotly.graph_objects as go
+import plotly
 
 @application.route('/')
 def index():
@@ -13,17 +14,27 @@ def index():
         parse_dates=['created_at'])
     df_nepalitimes['Newspaper'] = "Nepali Times"
 
-
-    
     df_kathmandupost = pd.read_csv(
         "datainnews_v2/static/csvs/KathmanduPost_flask.csv",
         parse_dates=['created_at'])
     df_kathmandupost['Newspaper'] = "The Kathmandu Post"
+    df_ = df_nepalitimes.append([df_kathmandupost])
+
+    df_month = df_.set_index('created_at').resample('M')['urls'].count().reset_index()
+    layout = go.Layout(
+        xaxis=dict(
+            title="Date"
+        ),
+        yaxis=dict(
+            title="Number of articles collected"
+        ) ) 
+    fig = go.Figure([go.Scatter(x=df_month['created_at'], y=df_month['urls'])], layout=layout)
+    div = plotly.offline.plot(fig, include_plotlyjs=False, output_type='div')
 
 
-    df = df_nepalitimes.append([df_kathmandupost])
-    df = df.groupby('Newspaper').sum().join(df.groupby('Newspaper').size().to_frame('News Articles'))
-  
+    df = df_.groupby('Newspaper').sum().join(df_.groupby('Newspaper').size().to_frame('News Articles'))
+
+    
     df.rename({
         'level1_count': 'Level 1',
         'level2_count': 'Level 2',
@@ -38,6 +49,7 @@ def index():
                       ]).map('{:,.1f} %'.format)
     df['Level 3 %'] = (100 * df['Level 3'] / df['Filtered Articles'
                       ]).map('{:,.1f} %'.format)
+
     chart1 = [{'name': 'Level 1', 'data': df['Level 1'].tolist()},
               {'name': 'Total Articles', 'data': df['News Articles'
               ].tolist()}]
@@ -72,6 +84,7 @@ def index():
     content = {
         'total_articles': df['News Articles'].sum(),
         'newspapers':newspapers,
+        'div':div,
         'chart1':chart1,
         'chart2':chart2,
         'chart3':chart3,
