@@ -264,7 +264,9 @@
                            <div class="card">
                               <div class="card-content">
                                  <div class="content">
-                                    <table class="table">
+                                    <div class="b-table">
+                                       <div class="table-wrapper has-mobile-cards">
+                                    <table class="table is-fullwidth is-hoverable">
                                        <thead>
                                           <tr>
                                              {% for c in column_names_level1 %}
@@ -276,14 +278,18 @@
                                        </thead>
                                        <tbody>
                                           {% for row in row_data_level1 %}
+                                          
                                           <tr>
-                                             {% for r in row %}
-                                             <td>{{ r }}</td>
-                                             {% endfor %}
+                                             <td data-label="Newspaper"> {{ row[0] }} </td>
+                                             <td data-label="News Articles"> {{ row[1] }} </td>
+                                             <td data-label="Level 1"> {{ row[2] }} </td>
+                                             <td data-label="Level 1 %"> {{ row[3] }} </td>
                                           </tr>
                                           {% endfor %}
                                        </tbody>
                                     </table>
+                                    </div>
+                                    </div>
                                  </div>
                               </div>
                            </div>
@@ -319,7 +325,9 @@
                            <div class="card">
                               <div class="card-content">
                                  <div class="content">
-                                    <table class="table">
+                                    <div class="b-table">
+                                       <div class="table-wrapper has-mobile-cards">
+                                    <table class="table is-fullwidth is-hoverable">
                                        <thead>
                                           <tr>
                                              {% for c in column_names_level2 %}
@@ -332,13 +340,18 @@
                                        <tbody>
                                           {% for row in row_data_level2 %}
                                           <tr>
-                                             {% for r in row %}
-                                             <td>{{ r }}</td>
-                                             {% endfor %}
+                                             
+                                                <td data-label="Newspaper"> {{ row[0] }} </td>
+                                                <td data-label="News Articles"> {{ row[1] }} </td>
+                                                <td data-label="Filtered Articles"> {{ row[2] }} </td>
+                                                <td data-label="Level 2"> {{ row[3] }} </td>
+                                                <td data-label="Level 2 %"> {{ row[4] }} </td>
                                           </tr>
                                           {% endfor %}
                                        </tbody>
                                     </table>
+                                    </div>
+                                    </div>
                                  </div>
                               </div>
                            </div>
@@ -374,7 +387,9 @@
                            <div class="card">
                               <div class="card-content">
                                  <div class="content">
-                                    <table class="table">
+                                    <div class="b-table">
+                                       <div class="table-wrapper has-mobile-cards">
+                                    <table class="table is-fullwidth is-hoverable">
                                        <thead>
                                           <tr>
                                              {% for c in column_names_level3 %}
@@ -387,13 +402,18 @@
                                        <tbody>
                                           {% for row in row_data_level3 %}
                                           <tr>
-                                             {% for r in row %}
-                                             <td>{{ r }}</td>
-                                             {% endfor %}
-                                          </tr>
+                                             
+                                             <td data-label="Newspaper"> {{ row[0] }} </td>
+                                             <td data-label="News Articles"> {{ row[1] }} </td>
+                                             <td data-label="Filtered Articles"> {{ row[2] }} </td>
+                                             <td data-label="Level 3"> {{ row[3] }} </td>
+                                             <td data-label="Level 3 %"> {{ row[4] }} </td>
+                                       </tr>
                                           {% endfor %}
                                        </tbody>
                                     </table>
+                                    </div>
+                                    </div>
                                  </div>
                               </div>
                            </div>
