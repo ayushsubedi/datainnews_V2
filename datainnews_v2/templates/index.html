@@ -2,21 +2,31 @@
 <html lang="en">
    <head>
       <meta charset="UTF-8" />
-      <title>DATA IN NEWS</title>
       <link
          rel="shortcut icon"
          href="{{ url_for('static', filename = 'img/logomin.png') }}"
          type="image/x-icon"
          />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta property="og:site_name" content="Data in news" />
-      <meta property="og:title" content="Data in news" />
-      <meta property="og:url" content="https://datainnews.ml/" />
-      <meta property="og:type" content="website" />
-      <meta
-         property="og:image"
-         content="https://datainnews.ml/static/img/social.jpg"
-         />
+      <!-- Primary Meta Tags -->
+      <title>Data in News</title>
+      <meta name="title" content="Data in News">
+      <meta name="description" content="How journalists use data in their reporting or in their writing can be viewed as a reflection of the country’s demand for statistics and data. Via this portal, we present a proxy indicator for statistical literacy.">
+
+      <!-- Open Graph / Facebook -->
+      <meta property="og:type" content="website">
+      <meta property="og:url" content="https://datainnews.herokuapp.com/">
+      <meta property="og:title" content="Data in News">
+      <meta property="og:description" content="How journalists use data in their reporting or in their writing can be viewed as a reflection of the country’s demand for statistics and data. Via this portal, we present a proxy indicator for statistical literacy.">
+      <meta property="og:image" content="{{ url_for('static', filename = 'img/showcase.png') }}">
+
+      <!-- Twitter -->
+      <meta property="twitter:card" content="summary_large_image">
+      <meta property="twitter:url" content="https://datainnews.herokuapp.com/">
+      <meta property="twitter:title" content="Data in News">
+      <meta property="twitter:description" content="How journalists use data in their reporting or in their writing can be viewed as a reflection of the country’s demand for statistics and data. Via this portal, we present a proxy indicator for statistical literacy.">
+      <meta property="twitter:image" content="{{ url_for('static', filename = 'img/showcase.png') }}">
+
       <meta
          property="og:description"
          content="Statistical literacy index based on national newspaper archives"
