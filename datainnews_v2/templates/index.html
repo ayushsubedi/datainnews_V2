@@ -25,10 +25,12 @@
          property="og:image"
          content="{{ url_for('static', filename = 'img/chart.PNG') }}"
          />
+
       <link
          rel="stylesheet"
          href="{{ url_for('static', filename = 'css/bulma.css') }}"
          />
+
       <link
          rel="stylesheet"
          href="{{ url_for('static', filename = 'css/divider.css') }}"
@@ -37,6 +39,7 @@
          rel="stylesheet"
          href="{{ url_for('static', filename = 'css/tabs.css') }}"
          />
+         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/table.css') }}">
       <script src="https://code.highcharts.com/highcharts.js"></script>
       <script src="https://code.highcharts.com/modules/data.js"></script>
       <script src="https://code.highcharts.com/modules/exporting.js"></script>
