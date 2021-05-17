@@ -77,7 +77,7 @@ def index():
         'total_articles': df['News Articles'].sum(),
         'max_date': df_.created_at.max().strftime('%d %b %Y'),
         'newspapers':newspapers,
-        'chart0_x': df_month['created_at'].dt.strftime('%b, %y').tolist(),
+        'chart0_x': df_month['created_at'].dt.strftime('%b, %Y').tolist(),
         'chart0_y': df_month['urls'].tolist(),
         'chart1_y': (100*df_percentage['level1_count']/df_percentage['urls']).tolist(),
         'chart2_y': (100*df_percentage['level2_count']/df_percentage['level_2_3_valid']).tolist(),

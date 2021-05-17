@@ -293,7 +293,7 @@
                         <div class="content">
                            <h2 class="has-text-primary">Level 2 Results</h2>
                            <div>
-                              <div class="divider is-primary">Level 8 Progress</div>
+                              <div class="divider is-primary">Level 2 Progress</div>
                            </div>
                            <div id="div8"></div>
                            <div>
@@ -607,7 +607,7 @@
              min: 0,
              max:100,
              title: {
-               text: 'Percentage',
+               text: '% of Articles',
              },
          
            },
@@ -721,7 +721,7 @@
              min: 0,
              max:100,
              title: {
-               text: 'Percentage',
+               text: '% of Articles',
              },
          
            },
@@ -842,7 +842,7 @@
              min: 0,
              max:100,
              title: {
-               text: 'Percentage',
+               text: '% of Articles',
              },
          
            },
@@ -857,6 +857,11 @@
          });
       </script>
       <script>
+         Highcharts.setOptions({
+    lang: {
+    thousandsSep: ""
+  }
+})
          Highcharts.chart('div0', {
            chart: {
              backgroundColor: 'transparent',
@@ -867,6 +872,12 @@
              borderWidth: 2,
              borderColor: "#4a4a4a11",
            },
+           legend: {
+         enabled: false
+         },
+         tooltip: {
+                 pointFormat: '<b>Articles Collected: {point.y}</b>'
+               },
            title: {
              text: ''
            },
@@ -886,7 +897,7 @@
            },
            yAxis: {
              title: {
-               text: 'Number of articles',
+               text: 'Number of Articles',
              },
          
            },
@@ -943,7 +954,7 @@
              min: 0,
              max:100,
              title: {
-               text: 'Number of articles',
+               text: '% of Articles',
              },
          
            },
@@ -1000,7 +1011,7 @@
              min: 0,
              max:100,
              title: {
-               text: 'Number of articles',
+               text: '% of Articles',
              },
          
            },
@@ -1057,7 +1068,7 @@
              min: 0,
              max:100,
              title: {
-               text: 'Number of articles',
+               text: '% of Articles',
              },
          
            },
