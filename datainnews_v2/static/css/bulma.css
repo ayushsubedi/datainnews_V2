@@ -11668,3 +11668,12 @@
     padding: 3rem 1.5rem 6rem;
   }
   /*# sourceMappingURL=bulma.css.map */
+
+  .bg-img { 
+    background-image: url(../img/background.jpeg) ;
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-attachment: fixed;
+    background-size:  cover;
+    background-color: #999
+  }
