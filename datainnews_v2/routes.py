@@ -20,9 +20,14 @@ def index():
         "datainnews_v2/static/csvs/OnlineKhabar_En_flask.csv",
         parse_dates=['created_at'])
     df_onlinekhabar['Newspaper'] = "Onlinekhabar"
+
+    df_republicanepal = pd.read_csv(
+        "datainnews_v2/static/csvs/RepublicaNepal_flask.csv",
+        parse_dates=['created_at'])
+    df_republicanepal['Newspaper'] = "Republica Nepal"
     
     
-    df_ = df_nepalitimes.append([df_kathmandupost, df_onlinekhabar])
+    df_ = df_nepalitimes.append([df_kathmandupost, df_onlinekhabar, df_republicanepal])
     df = df_.groupby('Newspaper').sum().join(df_.groupby('Newspaper').size().to_frame('News Articles'))
     df_month = df_.set_index('created_at').resample('M')['urls'].count().reset_index()
     df_percentage = df_.set_index('created_at').resample('M').sum()
