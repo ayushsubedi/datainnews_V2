@@ -175,6 +175,9 @@
                               percent of the articles directly referenced data, records,
                               research, statistics, or studies. 
                            </p>
+                           <h6 class="has-text-primary">Filtered Articles</h6>
+                           <div id="pie"></div>
+                           <br>
                            <p>
                               The
                               <a
@@ -187,6 +190,7 @@
                               proportional reasoning, but which do involve appropriate use of
                               terminology."
                            </p>
+                           
                            <h6 class="has-text-primary">Level 2 Keywords</h6>
                            <script src="https://gist.github.com/datafornepal/4f0b35c597c377630e68dfbd820e7cff.js"></script>
                            <h3 class="has-text-primary">Level 3 Analysis</h3>
@@ -1087,6 +1091,61 @@
          data: {{chart3_y}}    
          }]
          });
+      </script>
+      <script>
+         Highcharts.chart('pie', {
+            chart: {
+             backgroundColor: 'transparent',
+             spacingBottom: 50,
+             spacingTop: 50,
+             spacingLeft: 50,
+             spacingRight: 50,
+             borderWidth: 2,
+             borderColor: "#4a4a4a11",
+             type:'pie'
+           },
+  title: {
+    text: ''
+  },
+  exporting: {
+             buttons: {
+             contextButton: {
+               menuItems: ['downloadPNG', 'downloadSVG']
+             }
+             }
+           },
+  tooltip: {
+    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+  },
+  accessibility: {
+    point: {
+      valueSuffix: '%'
+    }
+  },
+  plotOptions: {
+    pie: {
+      allowPointSelect: true,
+      cursor: 'pointer',
+      dataLabels: {
+        enabled: true,
+        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+      }
+    }
+  },
+  series: [{
+    name: 'Brands',
+    colorByPoint: true,
+    data: [{
+      name: 'Articles filtered (Level 2 and Level 3)',
+      y: {{pie_filtered_articles}},
+      sliced: true,
+      selected: true
+    }, {
+      name: 'Ignored Articles',
+      y: {{pie_non_filtered_articles}}
+    }]
+  }]
+});
       </script>
    </body>
 </html>
