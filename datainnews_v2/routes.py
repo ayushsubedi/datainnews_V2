@@ -86,6 +86,8 @@ def index():
     newspapers = df['Newspaper'].tolist()
     filtered_articles = round(100*df_percentage['level_2_3_valid'].sum()/df_percentage['urls'].sum(),2)
     content = {
+        'pie_filtered_articles': df['Filtered Articles'].sum(),
+        'pie_non_filtered_articles': df['News Articles'].sum() - df['Filtered Articles'].sum(),
         'filtered_articles': filtered_articles,
         'level_1_average': round(level1_stats.mean(), 2),
         'level_1_min': round(level1_stats.min(),2),
