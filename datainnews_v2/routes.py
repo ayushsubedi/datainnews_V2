@@ -81,15 +81,21 @@ def index():
                 'Level 3', 'Level 3 %']]
     column_names_level3 = level3.columns.values
     row_data_level3 = level3.values.tolist()
+    level1_stats = 100*df_percentage['level1_count']/df_percentage['urls']
 
     newspapers = df['Newspaper'].tolist()
+    filtered_articles = round(100*df_percentage['level_2_3_valid'].sum()/df_percentage['urls'].sum(),2)
     content = {
+        'filtered_articles': filtered_articles,
+        'level_1_average': round(level1_stats.mean(), 2),
+        'level_1_min': round(level1_stats.min(),2),
+        'level_1_max': round(level1_stats.max(),2),
         'total_articles': df['News Articles'].sum(),
         'max_date': df_.created_at.max().strftime('%d %b %Y'),
         'newspapers':newspapers,
         'chart0_x': df_month['created_at'].dt.strftime('%b, %Y').tolist(),
         'chart0_y': df_month['urls'].tolist(),
-        'chart1_y': (100*df_percentage['level1_count']/df_percentage['urls']).tolist(),
+        'chart1_y': (level1_stats).tolist(),
         'chart2_y': (100*df_percentage['level2_count']/df_percentage['level_2_3_valid']).tolist(),
         'chart3_y': (100*df_percentage['level3_count']/df_percentage['level_2_3_valid']).tolist(),
         'chart1':chart1,

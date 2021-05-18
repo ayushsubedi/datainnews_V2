@@ -108,14 +108,7 @@
                   <span>Level 3 Results</span>
                   </a>
                </li>
-               <li data-target="pane-5" id="5">
-                  <a>
-                  <span class="icon is-small"
-                     ><i class="fas fa-arrow-down"></i
-                     ></span>
-                  <span>Limitations</span>
-                  </a>
-               </li>
+
             </ul>
          </div>
       </section>
@@ -135,19 +128,18 @@
                               statistics and data. The World Bank team developed an indicator
                               model to assess the use of data by Nepali news portals based on
                               the methodology proposed by Klein, Galdin, and Mohamedou 2016. As
-                              of 9th February 2020, the results show that very few news articles
+                              of <strong>{{max_date}}</strong>, the results show that very few news articles
                               indicate the source of data or mention development indicators.
                               However, articles that discuss data, reports, research,
                               statistics, and related topics do critically engage with these
                               ideas.
                               <br /><br />
                               More than <strong>{{total_articles}} articles </strong> were
-                              analyzed to assess the use of data in media (the data collection
-                              is ongoing and the analysis is updated regularly on this portal).
-                              Initially, the data source for the model was Nepali news portals that support
-                              RSS feeds. 
-                              Due to most of the Nepali news portals deprecating the RSS feature, 
-                              the current source of news articles are news URLs posted by the official news portal's account on twitter. 
+                              analyzed to assess the use of data in media.
+                              In the <a href="http://datainnews.us-west-1.elasticbeanstalk.com/" target="_blank">previous implementation</a> of this project, 
+                              the source of data was RSS feeds from Nepali news portal. 
+                              Unfortunately, due to most of the Nepali news portals deprecating their RSS feature, 
+                              for this implementation, the news articles are scraped from article URLs posted by the official news portal's account on twitter. 
                               The news portals that use twitter to post articles regularly are
                               are <strong>The Himalayan Times, Onlinekhabar, The Nepali
                               Times, Republica Nepal, and The Kathmandu Post.</strong>
@@ -160,7 +152,7 @@
                               data source, a statistical/development indicator, or keywords from
                               papers on statistical capacity–building projects. As of <strong>{{max_date}}</strong>, the share of news articles that included at least
                               one keyword that indicated “consistent non-critical” use of data
-                              averaged 7.6 percent (scores ranged from 2 percent to 12 percent).
+                              averaged {{level_1_average}} percent (scores ranged from {{level_1_min}}  percent to {{level_1_max}}  percent).
                            </p>
                            <p>
                               The
@@ -179,10 +171,9 @@
                            <p>
                               This level of analysis assessed whether an article critically
                               engaged with topics of data or statistics or made arguments by
-                              using mathematical concepts. As of <strong>{{max_date}}</strong>, seventeen
+                              using mathematical concepts. As of <strong>{{max_date}}</strong>, {{filtered_articles}}
                               percent of the articles directly referenced data, records,
-                              research, statistics, or studies. Two-thirds of those articles
-                              included keywords.
+                              research, statistics, or studies. 
                            </p>
                            <p>
                               The
@@ -202,7 +193,7 @@
                            <p>
                               “Critical mathematical” use of data occurs when an article
                               indicates questioning or interpreting of data and statistics. As
-                              of <strong>{{max_date}}</strong>, no article met this criterion.
+                              of <strong>{{max_date}}</strong>, only a handful of articles met this criterion.
                            </p>
                            <p>
                               The
@@ -432,33 +423,7 @@
                   </div>
                </div>
             </div>
-            <div class="tab-pane" id="pane-5">
-               <div class="content">
-                  <div class="card">
-                     <div class="card-content">
-                        <div class="content">
-                           <h1 class="has-text-primary">Limitations</h1>
-                           <p>
-                              Several limitations of the model in the context of data collection
-                              and analysis methodology have been identified.<br /><br />
-                              First of all, very few Nepali news portals support news categories
-                              or webpage based RSS. We found only 7 in English when we searched
-                              for RSS between 9th December 2019 - 11th November 2020.
-                              
-                              Besides, the portals that support RSS do not update their feeds on
-                              a regular basis. Therefore, we had to change our implementation from RSS (described by original authors), to getting data from Twitter.<br /><br />Additionally, the only language
-                              medium supported currently is English. The model fails to capture
-                              segments of several news portals and a significant population size
-                              who consume news in Nepali. The model also makes the assumption
-                              that sequence matching and keywords association implies
-                              statistical literacy. This leads to a high rate of false-positives
-                              and false-negatives. <br /><br />
-                           </p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+
          </div>
       </div>
       <br /><br />
