@@ -84,7 +84,9 @@ def index():
     level1_stats = 100*df_percentage['level1_count']/df_percentage['urls']
 
     newspapers = df['Newspaper'].tolist()
+    filtered_articles = round(100*df_percentage['level_2_3_valid'].sum()/df_percentage['urls'].sum(),2)
     content = {
+        'filtered_articles': filtered_articles,
         'level_1_average': round(level1_stats.mean(), 2),
         'level_1_min': round(level1_stats.min(),2),
         'level_1_max': round(level1_stats.max(),2),
