@@ -24,7 +24,7 @@ def index():
     df_republicanepal = pd.read_csv(
         "datainnews_v2/static/csvs/RepublicaNepal_flask.csv",
         parse_dates=['created_at'])
-    df_republicanepal['Newspaper'] = "Republica Nepal"
+    df_republicanepal['Newspaper'] = "myRepublica"
 
     df_thehimalayan = pd.read_csv(
         "datainnews_v2/static/csvs/thehimalayan_flask.csv",
